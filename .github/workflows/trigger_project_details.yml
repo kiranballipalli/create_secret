@@ -25,8 +25,8 @@ jobs:
         run: pip install msal
 
       # 4. Run Python token script with secrets
-      - name: Run Token Generator
-        run: python arize/token_gen.py
+      - name: Run get_secrets
+        run: python arize/get_secrets.py
         env:
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}

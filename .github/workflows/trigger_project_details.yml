@@ -3,7 +3,7 @@ name: Trigger project details
 on:
   push:
     branches:
-      - arize_onboard_update
+      - main
 
 jobs:
   run-python:

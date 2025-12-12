@@ -22,3 +22,10 @@ def api_scope():
 
 def tenant_id():
     return WorkspaceDetails.TENANT_ID
+
+
+if __name__ == "__main__":
+    get_client_id()
+    get_client_secret()
+    print("API Scope:", api_scope())
+    print("Tenant ID:", tenant_id())

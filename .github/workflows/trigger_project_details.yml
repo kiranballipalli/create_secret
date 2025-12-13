@@ -3,7 +3,7 @@ name: Trigger project details
 on:
   push:
     branches:
-      - test_git_action
+      - main
 
   workflow_dispatch:   # 👈 THIS enables manual trigger
 

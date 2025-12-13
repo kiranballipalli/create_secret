@@ -1,32 +1,24 @@
-name: Trigger project details
+name: Trigger project details (Manual Only)
 
 on:
-  push:
-    branches:
-      - main
-
-  workflow_dispatch:   # 👈 THIS enables manual trigger
+  workflow_dispatch:
 
 jobs:
   run-python:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Setup Python
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
 
-      # 3. Install dependencies
       - name: Install dependencies
         run: pip install msal
 
-      # 4. Run Python script with secrets
       - name: Run get_secrets
         run: python arize/get_secrets.py
         env:

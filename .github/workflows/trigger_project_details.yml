@@ -5,12 +5,14 @@ on:
     branches:
       - main
 
+  workflow_dispatch:   # 👈 THIS enables manual trigger
+
 jobs:
   run-python:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout code
+      # 1. Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -24,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: pip install msal
 
-      # 4. Run Python token script with secrets
+      # 4. Run Python script with secrets
       - name: Run get_secrets
         run: python arize/get_secrets.py
         env:
